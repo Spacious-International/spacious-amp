@@ -8,7 +8,7 @@
     <%= javascript_include_tag 'https://cdn.ampproject.org/v0.js', async: true %>
     <%# include a canonical reference to regular HTML page. %>
     <%# important: nil format ensures that url is rendered as http://localhost:3000/ rather than http://localhost:3000/index %>
-    <link rel="canonical" href="<%= url_for(:only_path => false, format: nil) %>">
+    <link media="font" rel="canonical" href="<%= url_for(:only_path => false, format: nil) %>" onload="this.onload=null;this.media=&#39;all&#39;;window._spacious_main_css_loaded=true">
     <meta name='viewport' content='width=device-width,minimum-scale=1,initial-scale=1'>
     <%# standard AMP styles %>
     <style amp-boilerplate>
@@ -21,17 +21,13 @@
       </style>
     </noscript>
     <meta content="8C50E571B35D9D11F1E4B5764BA49DC8" name="msvalidate.01" />
-    <link href="https://plus.google.com/102687049320191769357" rel="publisher" />
     <title>Cherry Crest 翠麗軒 Property For Sale or Rent, Poho｜Spacious</title>   
     <link
       rel="stylesheet"
       media="print"
       href="https://cdn.spacious.hk/assets/apps/spacious_website/render_unblocking/phase_2-767ea7e55cf4aae42167de96b967db9dbc066afae622385cbeffaef2b4b5df4c.css"
       onload="this.onload=null;this.media=&#39;all&#39;;window._spacious_main_css_loaded=true"
-    />
-  
-   
-   
+    /> 
   </head>
   <body class="with-desktop-device user-signed-out page--buildings--single_residential_building_summary_page page-desktop" data-instant-intensity="mousedown" data-instant-whitelist>
     <%= yield %>
