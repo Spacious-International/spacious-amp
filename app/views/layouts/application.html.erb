@@ -1,18 +1,279 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<%# <html amp> is also valid markup %>
+<html ⚡>
   <head>
-    <title>AmpProject</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <title><%= yield :title %></title>
+    <meta charset='utf-8'>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%# main AMP library %>
+    <%= javascript_include_tag 'https://cdn.ampproject.org/v0.js', async: true %>
+    <%# include a canonical reference to regular HTML page. %>
+    <%# important: nil format ensures that url is rendered as http://localhost:3000/ rather than http://localhost:3000/index %>
+    <link rel="canonical" href="/" />
+    <meta
+      name="viewport"
+      content="width=device-width,minimum-scale=1,initial-scale=1"
+    />
+    <%# standard AMP styles %>
+    <style amp-boilerplate>
+      body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
+    </style>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet" type="text/css">
+    <style amp-custom>
 
+      body {
+        font-family: 'Lato', sans-serif;
+      }
+
+      .container {
+        display: block;
+        margin: auto;
+        width: 1200px;
+      }
+
+      .topbar-wrapper {
+        background-color: #f5f5f5;
+        padding-top: 7px;
+        padding-bottom: 7px;
+      }
+
+      .topbar {
+        display: flex;
+      }
+
+      .topbar ul {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-size: 14px;
+      }
+
+      .cm-res-toggle {
+        padding-top: 2px;
+        display: flex;
+        border: 1px solid #2b476d;
+        padding-left: 0px;
+        height: fit-content;
+        padding-left: 5px;
+        padding-right: 3px;
+        border-radius: 47px;
+      }
+
+      .cm-res-toggle li {
+        list-style: none;
+        height: 20px;
+      }
+
+      .cm-res-toggle li a{
+        text-decoration: none;
+      }
+
+      .cm-res-toggle li:first-child {
+        margin-right: 5px;
+      }
+
+      .cm-res-toggle li:first-child a{
+        color: #888;
+      }
+
+      .cm-res-toggle li:nth-child(2) a {
+        margin-left: 5px;
+      }
+
+      .cm-res-toggle li:nth-child(2) a{
+        background: #2b476d;
+        color: #fff;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 40px;
+        padding-bottom: 1px;
+      }
+
+      .nvbr-list-options {
+        padding-left: 0px;
+        margin-left: 30px;
+        display: flex;
+        margin-bottom: 0px;
+        list-style: none;
+      }
+
+      .nvbr-list-options li{
+        margin-right: 30px
+      }
+
+      .nvbr-list-options li a{
+        text-decoration: none;
+        color: #2b476d;
+        line-height: 24px;
+        font-weight: 700;
+        height: 24px;
+        font-size: 12px;
+        font-size: .8666666667rem;
+        line-height: 1.3;
+      }
+
+      .subheader-wrapper {
+        background: #1b3861;
+        padding-top: 12px;
+        padding-bottom: 12px;
+      }
+
+      .subheader-wrapper amp-img {
+        width: 100px;
+      }
+
+      .subheader-wrapper .nvbr-list-options {
+        height: fit-content;
+      }
+
+      .subheader-wrapper .nvbr-list-options li {
+        margin: 8px;
+        margin-right: 30px;
+      }
+
+      .subheader-wrapper ul.nvbr-list-options li a {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 300;
+      }
+
+      .subheader-wrapper .reg-options {
+        padding-left: 0px;
+        margin-left: auto;
+        list-style: none;
+      }
+
+      .subheader-wrapper .reg-options li {
+        margin: 8px;
+      }
+
+      .subheader-wrapper .reg-options li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 300;
+      }
+
+      .page-main-haeding{
+        font-size: 1.8666666667rem;
+        line-height: 1.3;
+        font-weight: 700;
+        color: #2b476d;
+        margin-bottom: 30px;
+      }
+
+      .row {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+      }
+
+      .col-9 {
+        -ms-flex: 0 0 75%;
+        flex: 0 0 70%;
+        max-width: 70%;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .col-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+
+      .page--title {
+        display: flex;
+      }
+
+      .page--title  .page--title-text {
+        white-space: nowrap;
+        font-size: 22px;
+        font-size: 1.4666666667rem;
+        line-height: 1.3;
+        line-height: 34px;
+        vertical-align: middle;
+        font-weight: 700;
+        color: #2b476d;
+      }
+
+      .page--title .page-section-title-bar__container {
+        border-top: 1px solid #2b476d;
+        width: 100%;
+        margin-top: 19px;
+        margin-left: 34px;
+      }
+
+      .page-para p{
+        color: #333;
+        line-height: 1.3;
+        line-height: 1.45;
+      }
+
+      .following--box {
+        box-shadow: 0 2px 4px 0 #ccc;
+      }
+
+      .following--box--heading {
+        background-color: #2b476d;
+        color: #fff;
+        padding: 15px;
+        font-weight: 500;
+        font-size: 17px;
+        font-size: 1.1333333333rem;
+        line-height: 1.3;
+      }
+
+      .following--box--body {
+        padding: 15px;
+      }
+
+      .following--box--text {
+        font-size: 16px;
+        color: #333333;
+        line-height: 1.3;
+        line-height: 1.45;
+        padding-bottom: 20px;
+      }
+      .following--box--action {
+        width: 138px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 30px;
+        background: #f2913d;
+        text-align: center;
+        padding-top: 9px;
+        border-radius: 4px;
+      }
+
+      .following--button {
+        text-align: center;
+        width: 100%;
+      }
+
+      .following--button a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .normal-link a {
+        text-align: center;display: block;margin-top: 30px;
+      }
+
+    </style>
+    <noscript>
+      <style amp-boilerplate>
+        body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}
+      </style>
+    </noscript>
+    <meta content="8C50E571B35D9D11F1E4B5764BA49DC8" name="msvalidate.01" />
+    <title>Cherry Crest 翠麗軒 Property For Sale or Rent, Poho｜Spacious</title>  
   </head>
-
-  <body>
+  <body class="with-desktop-device user-signed-out page--buildings--single_residential_building_summary_page page-desktop" data-instant-intensity="mousedown" data-instant-whitelist>
     <%= yield %>
   </body>
 </html>
