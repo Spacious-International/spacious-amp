@@ -4,7 +4,7 @@ development:
   database: spacious-amp
   host: localhost
   username: postgres
-  password: postgres
+  password: password
   pool: 5
 
 
@@ -14,5 +14,5 @@ production:
   database: spacious-amp
   host: localhost
   username: postgres
-  password: postgres
+  password: password
   pool: 5
