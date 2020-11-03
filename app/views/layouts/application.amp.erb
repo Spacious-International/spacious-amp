@@ -1056,12 +1056,15 @@
         background-color: #2b476d;
         color: #fff;
         padding: 5px 10px;
+        display: flex;
       }
 
       .cell--cities--public-transport--info.cell--with-state--desktop .cell--cities--public-transport--info--mode--icon {
         height: 20px;
         line-height: 20px;
         vertical-align: top;
+        width: 24px;
+        margin: 0 3px 0 0;
       }
 
       .cell--cities--public-transport--info.cell--with-state--desktop .cell--cities--public-transport--info--mode--text {
@@ -1094,6 +1097,8 @@
         border-radius: 2px;
         text-decoration: none;
         color: #000;
+        display: flex;
+        justify-content: center;
       }
       .cell--cities--public-transport--info .cell--cities--public-transport--info--route {
         border: 1px solid;
@@ -1143,7 +1148,8 @@
       }
 
       .cell--cities--public-transport--info.cell--with-state--desktop .cell--cities--public-transport--info--route {
-        display: block;
+        display: flex;
+        justify-content: center;
         border: 1px solid;
         padding: 6px 4px;
         border-radius: 2px;
@@ -1302,6 +1308,7 @@
       .main-footer .main-footer__section--spacious {
         padding-top: 30px;
         padding-bottom: 30px;
+        width: 100%;
       }
 
       .main-footer .main-footer__section--spacious--logo-container {
@@ -1692,6 +1699,11 @@
       async 
       custom-element="amp-iframe" 
       src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"
+    ></script>
+    <script 
+      async 
+      custom-element="amp-bind" 
+      src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
     ></script>
     <style amp-boilerplate>
       body {
