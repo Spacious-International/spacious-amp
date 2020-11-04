@@ -82,6 +82,37 @@
         padding-bottom: 1px;
       }
 
+      .dropdown {
+        display: inline-block;
+        position: relative;
+      }
+      .dropdown summary {
+        list-style: none;
+        cursor: pointer;
+      }
+      .dropdown summary::-webkit-details-marker {
+        display: none;
+      }
+      .dropdown .dropdown-content {
+        position: absolute;
+        min-inline-size: max-content;
+        background-color: white;
+      }
+      .dropdown details[open] summary::before {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: "";
+        cursor: default;
+      }
+      .dropdown .dropdown-trigger {
+      }
+
+      .dropdown .dropdown-content {
+      }
+
       .nvbr-list-options {
         padding-left: 0px;
         margin-left: 30px;
