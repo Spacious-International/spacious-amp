@@ -25,6 +25,14 @@
         width: 1200px;
       }
 
+      .amp-sidebar-toolbar-target-shown {
+        display: none;
+      }
+
+      .mobile-navbar {
+        display: none;
+      }
+
       .topbar-wrapper {
         background-color: #f5f5f5;
         padding-top: 7px;
@@ -1680,13 +1688,60 @@
           padding: 7px 5px;
         }
 
+        .mobile-navbar {
+          background: #1b3861;
+          display: flex;
+          padding: 0 12px;
+          height: 62px;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+        }
+
+        .mobile-navbar .open-sidebar {
+          display: flex;
+          position: absolute;
+          left: 12px;
+        }
+
+        .mobile-navbar .open-sidebar svg {
+          height: 20px;
+          width: 20px;
+        }
+
+        .mobile-navbar amp-img {
+          height: 42px;
+          width: 110px;
+        }
+
+        .sample-sidebar {
+          padding: 36px 0 0;
+        }
+
+        .sample-sidebar .close-btn {
+          position: absolute;
+          right: 10px;
+          top: 10px;
+          border: none;
+          background: none;
+        }
+
+        .sample-sidebar .close-btn:hover, .sample-sidebar .close-btn:focus {
+          outline: none;
+        }
+
+        .sample-sidebar .close-btn svg {
+          height: 14px;
+          width: 14px;
+        }
+
         .topbar {
           flex-direction: column;
           align-items: flex-start;
         }
 
         .topbar-left {
-          flex-direction: row-reverse;
+          flex-direction: column-reverse;
           align-items: flex-start;
           width: 100%;
         }
@@ -1700,7 +1755,11 @@
         .topbar-left .nvbr-list-options {
           margin: 0;
           flex-direction: column;
-          width: calc(100% - 180px);
+          width: 100%;
+        }
+
+        .topbar-right {
+          margin: 14px 0 0;
         }
 
         .nvbr-list-options li {
@@ -1889,24 +1948,37 @@
         }
       }
 
+      @media screen and (min-width: 768px) and (max-width: 992px) {
+        .carousel-card {
+          width: 50%;
+        }
+
+        .amp-custom-carousel4 .carousel-card {
+          width: 50%;
+        }
+      }
+
       @media screen and (min-width: 992px) and (max-width: 1024px) {
         body {
           box-sizing: border-box;
+        }
+
+        .carousel-card {
+          width: 50%;
+        }
+
+        .amp-custom-carousel4 .carousel-card {
+          width: 33.33%;
         }
 
         .topbar-wrapper {
           padding: 7px;
         }
 
-        .topbar-wrapper .topbar {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
         .topbar-left {
-          flex-direction: row-reverse;
-          align-items: flex-start;
-          width: 100%;
+          flex-direction: row;
+          align-items: center;
+          width: 80%;
         }
 
         .dropdown .dropdown-content {
@@ -1917,12 +1989,14 @@
 
         .topbar-left .nvbr-list-options {
           margin: 0;
-          flex-direction: column;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-around;
           width: calc(100% - 180px);
         }
 
         .nvbr-list-options li {
-          margin: 0 0 10px;
+          margin: 0;
         }
 
         .subheader-wrapper {
@@ -1987,6 +2061,11 @@
       async 
       custom-element="amp-bind" 
       src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"
+    ></script>
+    <script 
+      async 
+      custom-element="amp-sidebar" 
+      src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"
     ></script>
     <style amp-boilerplate>
       body {
