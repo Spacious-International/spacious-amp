@@ -306,6 +306,92 @@
         font-weight: 700;
       }
 
+      #modalbox {
+        z-index: 10000
+      }
+
+      .modalbox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1;
+        background: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        height: 100%;
+        position: fixed;
+      }
+
+      .modal_box {
+        z-index: 99;
+        transition: all .3s ease-in-out;
+        width: 380px;
+      }
+
+      .modal_box .warn {
+        border-radius: 0px;
+        background: #fff;
+      }
+
+      .warn .modal-header {
+        padding: 24px 32px;
+        border-bottom: 1px solid #d8d8d8;
+        color: #333;
+        text-align: left;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 27px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .warn .modal-header amp-img {
+        height: 24px;
+        width: 24px;
+        cursor: pointer;
+      }
+
+      .warn .modal-header .close-modal {
+        outline: none;
+      }
+
+      .warn .modal-body{
+        padding-bottom: 32px;
+      }
+
+      .slideInDown {
+        -webkit-animation-name: slideInDown;
+        animation-name: slideInDown;
+        -webkit-animation-duration: .4s;
+        animation-duration: .4s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both
+      }
+
+      @-webkit-keyframes slideInDown {
+        0% {
+          -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+          visibility: visible
+        }
+        100% {
+          -webkit-transform: translateY(0);
+          transform: translateY(0)
+        }
+      }
+
+      @keyframes slideInDown {
+        0% {
+          -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+          visibility: visible
+        }
+        100% {
+          -webkit-transform: translateY(0);
+          transform: translateY(0)
+        }
+      }
+
       .page-main-haeding{
         font-size: 1.8666666667rem;
         line-height: 1.3;
@@ -458,11 +544,23 @@
         width: 138px;
         margin-left: auto;
         margin-right: auto;
-        height: 30px;
+        height: 38px;
         background: #f2913d;
-        text-align: center;
-        padding-top: 9px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
         border-radius: 4px;
+        font-size: 16px;
+        border: none;
+        font-family: 'Lato', sans-serif;
+        cursor: pointer;
+        transition: color .2s linear,background-color .2s linear;
+      }
+
+      .following--box--action:hover, .following--box--action:focus {
+        background-color: #e68300;
+        outline: none;
       }
 
       .following--button {
@@ -2080,6 +2178,11 @@
       custom-element="amp-sidebar" 
       src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"
     ></script>
+    <script 
+      async 
+      custom-element="amp-lightbox" 
+      src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"
+    ></script>
     <style amp-boilerplate>
       body {
         -webkit-animation: -amp-start 8s steps(1,end) 0s 1 normal both;
@@ -2141,6 +2244,7 @@
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet" type="text/css">
+    <link rel="canonical" href="https://ampbyexample.com/components/amp-lightbox/">
      
   </head>
   <body class="with-desktop-device user-signed-out page--buildings--single_residential_building_summary_page page-desktop" data-instant-intensity="mousedown" data-instant-whitelist>

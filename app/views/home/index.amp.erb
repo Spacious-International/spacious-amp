@@ -505,13 +505,7 @@
               <div class="following--box--text">
                 <p>Don't miss out! keep up with the latest transactions and listings near Cherry Crest</p>
               </div>
-              <div class="following--box--action">
-                <span class="following--button follow-button follow-button--default js-follow-button-with-modal follow-button_building_92470" data-building-id="92470" data-follow-type="residential" id="follow-button_building_92470">
-                  <span class="follow-button-content on-not-following following--button__content">
-                    <a class="following--button__link following--button__btn-create GTM-tracking-follow-building" rel="nofollow" href="#void">Follow Now </a>
-                  </span>
-                </span>
-              </div>
+              <button class="following--box--action" on="tap:modalbox" role="button" tabindex="0">Follow Now</button>
             </div>
           </div>
         </div>
@@ -2022,6 +2016,81 @@
     </div>
   </div>
 </div>
+
+<amp-lightbox id="modalbox" layout="nodisplay">
+  <div class="modalbox">
+    <div class="modal_box slideInDown">
+      <div class="warn">
+        <div class="modal-header">
+          <span>Sign Up</span>
+          <div on='tap:modalbox.close' role='button' tabindex='0'>
+            <amp-img
+              alt="close"
+              src="https://cdn.spacious.hk/assets/apps/spacious_website/shared/icons/spacious_close_grey-ca0f0d1c187750da7e5867c5a9c0429e99ecdcce498836496644a7a774c6e161.svg"
+              width="24"
+              height="24"
+              layout="responsive"
+            >
+            </amp-img>
+          </div>
+        </div>
+        <div class="modal-body">
+          <div class="auth-mode">
+            <div class="auth-mode-email">
+              <form class="simple-form" action="" accept-charset="UTF-8" method="post">
+                <div class="auth-sign-up-email">
+                  <div class="control-group">
+                    <div class="controls">
+                      <span class="input-wrapper">
+                        <input class="auth-mode-input" placeholder="Email" type="text" name="user">
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <input type="submit" name="commit" value="Register" class="auth--sign-up__submit GTM-tracking-signup-submit" data-disable-with="">
+              </form>
+            </div>
+            <div class="omniauth">
+              <div class="separator-container--text">
+                or
+              </div>
+              <div class="omniauth--provider-links">
+                <div class="omniauth--provider-links--content">
+                  <a class="btn auth--social-media-btn js-btn-omniauth-google GTM-tracking-google-signin" rel="nofollow" data-width="600" data-height="400" href="/users/auth/google_oauth2"><img height="23" width="23" class="auth--social-media-btn--icon loaded" src="//cdn.spacious.hk/assets/logo/google_logo/colorful_for_button-db71158a348c9f582e1f18c22bee91c6665913a7e799394997158760b1e6b0e6.svg" loading="lazy" data-ll-status="loaded">
+                  Sign up with Google
+                  </a><a class="btn auth--social-media-btn js-btn-omniauth-facebook GTM-tracking-facebook" rel="nofollow" data-width="600" data-height="400" href="/users/auth/facebook"><img height="23" width="23" class="auth--social-media-btn--icon loaded" src="//cdn.spacious.hk/assets/logo/facebook_logo/blue_for_button-52310c66bf5471a9337d8ac04207a908d71abda8c210acd7917f925d42266101.svg" loading="lazy" data-ll-status="loaded">
+                  Sign up with Facebook
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="auth__mode--actions">
+              <div class="auth__mode--action">
+                Have an account? <a class="js-switch-sign-up-in GTM-tracking-signup-already-have-account" href="#">Sign In</a>
+              </div>
+            </div>
+            <div class="auth__footer">
+              <div class="auth__footer--terms">
+                By clicking “Register”, you accept Spacious (Landcrowd Limited)
+                <a class="GTM-tracking-terms" target="_blank" rel="nofollow" href="/en/terms">Terms and Conditions</a> and <a class="GTM-tracking-terms" target="_blank" href="/en/privacy">Privacy Policy</a> and you consent to receive property
+                listing updates from Spacious (Landcrowd Limited) that you have
+                indicated an interest in and can opt-out at any time.
+                <div class="auth--sign-up__form-actions--reject-promotions--container">
+                  <input type="checkbox" name="reject_promotions" id="reject_promotions" value="true" class="auth--sign-up__form-actions--reject-promotions GTM-tracking-subscription">
+                  <span class="auth--sign-up__form-actions--reject-promotions--text">
+                  You do not wish to receive <a class="auth--tooltip" tabindex="0" data-trigger="focus" data-original-title="" title="">direct marketing emails</a> or SMS from Spacious,
+                  and its affiliates and partners. Spacious promises to never share your
+                  contact details without your permission and you can opt out at any time.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</amp-lightbox>
 
 <div class="normal-link">
   <a href="/" style="text-align: center;display: block;margin-top: 30px;">Go to normal link</a>
