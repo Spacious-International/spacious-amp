@@ -16,6 +16,77 @@
         font-family: 'Lato', sans-serif;
       }
 
+      .modal-scrollable {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        overflow: auto;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 1050;
+      }
+
+      .modal-scrollable .modal {
+        background: #fff;
+        width: 560px;
+        transform: translate(62%, 130%);
+      }
+
+      .modal-scrollable .modal .modal-header {
+        background-color: #2b476d;
+        border-bottom: 0;
+        padding: 15px;
+        color: #fff;
+        font-size: 18px;
+        line-height: 18px;
+        font-weight: 400;
+      }
+
+      .modal-scrollable .modal-body {
+        padding: 15px;
+      }
+
+      .modal-scrollable .modal-body .modal-text {
+        font-size: 15px;
+        line-height: 20px;
+        color: #333;
+      }
+
+      .modal-body-actions {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-body-actions .btn-close, .btn-follow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        color: #858596;
+        font-weight: 400;
+        padding: 0 12px;
+        height: 38px;
+        text-decoration: none;
+        margin: 0 20px 0 0;
+        font-size: 16px;
+        cursor: pointer;
+        border: none;
+      }
+
+      .modal-body-actions .btn-follow {
+        transition: background-color .2s linear;
+        background-color: #ff9100;
+        color: #fff;
+      }
+
+      .modal-body-actions .btn-follow:hover {
+        transition: background-color .2s linear;
+        background-color: #e68300;
+      }
+
       .container {
         display: block;
         margin: auto;
@@ -2344,6 +2415,12 @@
       custom-element="amp-ad" 
       src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"
     ></script>
+    <amp-script 
+      layout="container" 
+      src="https://code.jquery.com/jquery-1.11.3.js" 
+      sandbox="allow-forms">
+      
+    </amp-script>
     <style amp-boilerplate>
       body {
         -webkit-animation: -amp-start 8s steps(1,end) 0s 1 normal both;
