@@ -1,12 +1,7 @@
 <% provide(:title, 'AMP page') %>
 
-<amp-script 
-  layout="container" 
-  src="https://code.jquery.com/jquery-1.11.3.js" 
-  sandbox="allow-forms">
-  
-</amp-script>
-<div class="modal-scrollable">
+
+<div class="modal-scrollable" id="modalLoad">
   <div class="modal">
     <div class="modal-header">Stay up to date with Cherry Crest</div>
     <div class="modal-body">
@@ -14,8 +9,7 @@
       <form class="simple-form-modal"  method="post" action="/form/search-html/get">
         <div class="modal-text">Spacious will send you the latest news, listings, and transaction information for Cherry Crest.</div>
         <div class="modal-body-actions">
-          <a class="btn-close" data-dismiss="modal" href="#">Remind me later</a>
-
+          <div name="button" class="btn-close" on="tap:modalLoad.hide">Remind me later</div>
           <button name="button" type="submit" class="btn-follow">Follow Cherry Crest</button>
         </div>
       </form>
